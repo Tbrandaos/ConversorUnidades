@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Conversor</title>
+  </head>
+  <body>
+    <h1>Conversor de Unidades</h1>
+
+    <form>
+        <div class="form-group">
+          <label for="milhas">Distância em Milhas</label>
+          <input type="email" class="form-control" id="milhas" placeholder="Milhas">
+        </div>
+        <div class="form-group">
+            <label for="metros">Distância em Metros</label>
+            <input type="email" class="form-control" id="metros" placeholder="metros">
+        </div>
+        <div class="form-group">
+          <label for="km">Distância em Quilômetros</label>
+          <input type="email" class="form-control" id="km" placeholder="Quilometros">
+        </div>
+        <button type="button" id="calc" class="btn btn-primary">Converter</button>
+      </form>
+
+      <!-- JQuery -->
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="jquery-3.5.1.min.js"></script>
+      <!-- Option 1: Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+      <script>
+        $(function(){
+            $('#calc').click(function(){
+            const milhas = parseFloat($('#milhas').val())
+            if(isNaN(milhas)){
+              alert("Digite um valor válido")
+            }else{
+              const metros = milhas * 1609.34
+              const quilometros = milhas * 1.60934
+              $('#metros').val(metros)
+              $('#km').val(quilometros)
+            }    
+          })
+        })
+      </script>
+  </body>
+</html>
